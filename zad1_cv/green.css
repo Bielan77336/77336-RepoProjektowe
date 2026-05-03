@@ -108,3 +108,9 @@ textarea {
     font-size: 12px;
     margin-top: 4px;
 }
+
+#notesList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

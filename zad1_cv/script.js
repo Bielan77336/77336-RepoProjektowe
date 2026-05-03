@@ -22,7 +22,7 @@ buttonProjects.addEventListener("click", function () {
     }
 });
 
-// Pobieranie danych z pliku JSON
+// pobieranie danych z pliku JSON
 fetch("data.json")
     .then(function (response) {
         return response.json();
@@ -44,7 +44,7 @@ fetch("data.json")
         });
     });
 
-// WALIDACJA FORMULARZA
+// walidacja formularza
 const form = document.getElementById("contactForm");
 
 form.addEventListener("submit", function (e) {
@@ -88,3 +88,52 @@ form.addEventListener("submit", function (e) {
         form.reset();
     }
 });
+
+// localStorage - notatki
+const noteInput = document.getElementById("noteInput");
+const addNote = document.getElementById("addNote");
+const notesList = document.getElementById("notesList");
+
+let notes = JSON.parse(localStorage.getItem("notes")) || [];
+
+function saveNotes() {
+    localStorage.setItem("notes", JSON.stringify(notes));
+}
+
+function showNotes() {
+    notesList.innerHTML = "";
+
+    notes.forEach(function (note, index) {
+        const li = document.createElement("li");
+        li.textContent = note;
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Usuń";
+
+        deleteButton.addEventListener("click", function () {
+            notes.splice(index, 1);
+            saveNotes();
+            showNotes();
+        });
+
+        li.appendChild(deleteButton);
+        notesList.appendChild(li);
+    });
+}
+
+addNote.addEventListener("click", function () {
+    const noteText = noteInput.value.trim();
+
+    if (noteText === "") {
+        alert("Wpisz treść notatki");
+        return;
+    }
+
+    notes.push(noteText);
+    saveNotes();
+
+    noteInput.value = "";
+    showNotes();
+});
+
+showNotes();
