@@ -64,6 +64,10 @@ ul {
     padding-left: 20px;
 }
 
+li {
+    margin-bottom: 6px;
+}
+
 footer {
     text-align: center;
     margin-top: 30px;
@@ -91,9 +95,16 @@ input, textarea {
     margin-top: 5px;
     border-radius: 6px;
     border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 70px;
 }
 
 .error {
+    display: block;
     color: red;
     font-size: 12px;
+    margin-top: 4px;
 }

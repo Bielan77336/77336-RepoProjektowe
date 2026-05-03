@@ -1,0 +1,17 @@
+{
+    "umiejetnosci": [
+        "Praca zespołowa",
+        "Dobra organizacja pracy",
+        "Szybkie uczenie się",
+        "Podstawy HTML",
+        "Podstawy CSS",
+        "Podstawy JavaScript"
+    ],
+    "projekty": [
+        "Strona CV w HTML",
+        "Stylowanie strony CV za pomocą CSS",
+        "Zmiana motywu strony",
+        "Interakcja z użytkownikiem przez JavaScript",
+        "Formularz kontaktowy z walidacją"
+    ]
+}

@@ -22,6 +22,28 @@ buttonProjects.addEventListener("click", function () {
     }
 });
 
+// Pobieranie danych z pliku JSON
+fetch("data.json")
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        const skillsList = document.getElementById("skillsList");
+        const projectsList = document.getElementById("projectsList");
+
+        data.umiejetnosci.forEach(function (skill) {
+            const li = document.createElement("li");
+            li.textContent = skill;
+            skillsList.appendChild(li);
+        });
+
+        data.projekty.forEach(function (project) {
+            const li = document.createElement("li");
+            li.textContent = project;
+            projectsList.appendChild(li);
+        });
+    });
+
 // WALIDACJA FORMULARZA
 const form = document.getElementById("contactForm");
 
