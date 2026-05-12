@@ -12,8 +12,12 @@
         <header>
             <h1>Nikita Bielan</h1>
             <p>Numer indeksu: 77336</p>
+
             <img src="photo.jpg" alt="Zdjęcie profilowe Nikity Bielana" width="180">
-            <p>Student zainteresowany rozwojem w obszarze technologii i pracy zespołowej.</p>
+
+            <p>
+                Student zainteresowany rozwojem w obszarze technologii i pracy zespołowej.
+            </p>
 
             <button id="toggleTheme">Zmień motyw</button>
             <button id="toggleProjects">Ukryj projekty</button>
@@ -21,24 +25,49 @@
 
         <section>
             <h2>Kontakt</h2>
-            <p>Email: <a href="mailto:nikeqwz7051vwv@gmail.com">nikeqwz7051vwv@gmail.com</a></p>
-            <p>Telefon: <a href="tel:+48452922096">+48 452 922 096</a></p>
+
+            <p>
+                Email:
+                <a href="mailto:nikeqwz7051vwv@gmail.com">
+                    nikeqwz7051vwv@gmail.com
+                </a>
+            </p>
+
+            <p>
+                Telefon:
+                <a href="tel:+48452922096">
+                    +48 452 922 096
+                </a>
+            </p>
+
             <p>Miasto: Warszawa</p>
-            <p>GitHub: <a href="https://github.com/Bielan77336" target="_blank">github.com/Bielan77336</a></p>
+
+            <p>
+                GitHub:
+                <a href="https://github.com/Bielan77336" target="_blank">
+                    github.com/Bielan77336
+                </a>
+            </p>
         </section>
 
         <section>
             <h2>O mnie</h2>
-            <p>Jestem studentem zainteresowanym zdobywaniem doświadczenia i rozwijaniem umiejętności.</p>
+
+            <p>
+                Jestem studentem zainteresowanym zdobywaniem doświadczenia
+                i rozwijaniem umiejętności.
+            </p>
         </section>
 
         <section>
             <h2>Umiejętności</h2>
+
             <ul id="skillsList"></ul>
         </section>
 
         <section id="projectsSection">
             <h2>Projekty</h2>
+
             <ul id="projectsList"></ul>
         </section>
 
@@ -46,39 +75,58 @@
             <h2>Formularz kontaktowy</h2>
 
             <form id="contactForm" novalidate>
+
                 <p>
                     Imię:<br>
+
                     <input type="text" id="imie">
+
                     <span class="error" id="errorImie"></span>
                 </p>
 
                 <p>
                     Nazwisko:<br>
+
                     <input type="text" id="nazwisko">
+
                     <span class="error" id="errorNazwisko"></span>
                 </p>
 
                 <p>
                     E-mail:<br>
+
                     <input type="email" id="email">
+
                     <span class="error" id="errorEmail"></span>
                 </p>
 
                 <p>
                     Wiadomość:<br>
+
                     <textarea id="wiadomosc"></textarea>
+
                     <span class="error" id="errorWiadomosc"></span>
                 </p>
 
-                <button type="submit">Wyślij</button>
+                <button type="submit">
+                    Wyślij dane na serwer
+                </button>
+
             </form>
         </section>
 
         <section>
             <h2>Moje notatki</h2>
 
-            <input type="text" id="noteInput" placeholder="Dodaj notatkę lub zadanie">
-            <button id="addNote">Dodaj</button>
+            <input
+                type="text"
+                id="noteInput"
+                placeholder="Dodaj notatkę lub zadanie"
+            >
+
+            <button id="addNote">
+                Dodaj
+            </button>
 
             <ul id="notesList"></ul>
         </section>
@@ -89,5 +137,6 @@
     </main>
 
     <script src="script.js"></script>
+
 </body>
 </html>

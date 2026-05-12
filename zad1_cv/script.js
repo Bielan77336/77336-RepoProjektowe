@@ -44,7 +44,7 @@ fetch("data.json")
         });
     });
 
-// walidacja formularza
+// walidacja formularza i wysyłanie danych na backend
 const form = document.getElementById("contactForm");
 
 form.addEventListener("submit", function (e) {
@@ -73,6 +73,7 @@ form.addEventListener("submit", function (e) {
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     if (!emailRegex.test(email)) {
         document.getElementById("errorEmail").textContent = "Niepoprawny email";
         ok = false;
@@ -84,8 +85,25 @@ form.addEventListener("submit", function (e) {
     }
 
     if (ok) {
-        alert("Formularz wysłany!");
-        form.reset();
+        fetch("https://6a03741c2afe8349b4b53a4e.mockapi.io/messages", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                imie: imie,
+                nazwisko: nazwisko,
+                email: email,
+                wiadomosc: wiadomosc
+            })
+        })
+        .then(function () {
+            alert("Dane zostały wysłane na serwer!");
+            form.reset();
+        })
+        .catch(function () {
+            alert("Błąd podczas wysyłania danych!");
+        });
     }
 });
 
